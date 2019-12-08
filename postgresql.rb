@@ -46,6 +46,7 @@ class Postgresql < Formula
     # to inside the SDK, so we need to use `-iwithsysroot` instead
     # of `-I` to point to the correct location.
     # https://www.postgresql.org/message-id/153558865647.1483.573481613491501077%40wrigleys.postgresql.org
+    puts DevelopmentTools.clang_build_version
     if DevelopmentTools.clang_build_version >= 1000
       inreplace "configure",
                 "-I$perl_archlibexp/CORE",
