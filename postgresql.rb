@@ -47,6 +47,7 @@ class Postgresql < Formula
     # of `-I` to point to the correct location.
     # https://www.postgresql.org/message-id/153558865647.1483.573481613491501077%40wrigleys.postgresql.org
     puts DevelopmentTools.clang_build_version
+=begin
     if DevelopmentTools.clang_build_version >= 1000
       inreplace "configure",
                 "-I$perl_archlibexp/CORE",
@@ -58,7 +59,7 @@ class Postgresql < Formula
                 "-I$(perl_archlibexp)/CORE",
                 "-iwithsysroot $(perl_archlibexp)/CORE"
     end
-
+=end
     system "./configure", *args
     system "make"
 
